@@ -1,9 +1,11 @@
 const { Server } = require("socket.io");
 
 const io = new Server(8000, {
-    origin: "https://react-webrtc-main-1.onrender.com", 
+     cors: {
+    origin: "https://react-webrtc-main-1.onrender.com",
     methods: ["GET", "POST"],
     credentials: true
+  }
 });
 
 const emailToSocketIdMap = new Map();
